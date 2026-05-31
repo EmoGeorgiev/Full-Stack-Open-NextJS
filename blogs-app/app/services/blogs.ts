@@ -1,45 +1,37 @@
-const blogs = [
-  {
-    id: 1,
-    title: "Getting Started with TypeScript",
-    author: "Jane Doe",
-    url: "https://example.com/typescript-intro",
-    likes: 42,
-  },
-  {
-    id: 2,
-    title: "Understanding React Hooks",
-    author: "John Smith",
-    url: "https://example.com/react-hooks",
-    likes: 87,
-  },
-  {
-    id: 3,
-    title: "Building APIs with Node.js",
-    author: "Alice Johnson",
-    url: "https://example.com/nodejs-apis",
-    likes: 23,
-  },
-]
+import { eq, like } from "drizzle-orm"
+import { db } from "@/db"
+import { blogs } from "@/db/schema"
 
-let nextId = 4
+export const getBlogs = async (filter?: string) => {
+  if (filter) {
+    return db.query.blogs.findMany({
+      where: like(blogs.title, `%${filter}%`),
+      orderBy: (blogs, { desc }) => [desc(blogs.likes)]
+    })
+  }
 
-export const getBlogs = () => {
-  return blogs
+  return db.query.blogs.findMany({
+    orderBy: (blogs, { desc }) => [desc(blogs.likes)]
+  })
 }
 
-export const addBlog = (title: string, author: string, url: string) => {
-  blogs.push({ id: nextId++, title, author, url, likes: 0 })
+export const addBlog = async (title: string, author: string, url: string) => {
+  await db.insert(blogs).values({ title, author, url })
 }
 
-export const getBlogById = (id: number) => {
-  return blogs.find(blog => blog.id === id)
+export const getBlogById = async (id: number) => {
+  return db.query.blogs.findFirst({
+    where: eq(blogs.id, id),
+  })
 }
 
-export const addLike = (id: number) => {
-  const blog = getBlogById(id)
+export const addLike = async (id: number) => {
+  const blog = await getBlogById(id)
 
   if (blog) {
-    blog.likes++
+    await db
+      .update(blogs)
+      .set({ likes: blog.likes + 1 })
+      .where(eq(blogs.id, id))
   }
 }
