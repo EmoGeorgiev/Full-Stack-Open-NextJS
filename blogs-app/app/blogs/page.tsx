@@ -3,12 +3,13 @@ import { getBlogs } from "../services/blogs"
 
 const Blogs = () => {
   const blogs = getBlogs()
+  const sortedBlogs = [...blogs].sort((x, y) => y.likes - x.likes)
 
   return (
     <div>
       <h2>Blogs</h2>
       <ul>
-        {blogs.map(blog => (
+        {sortedBlogs.map(blog => (
           <li key={blog.id}>
             <Link href={`/blogs/${blog.id}`}>
               Title: {blog.title},
