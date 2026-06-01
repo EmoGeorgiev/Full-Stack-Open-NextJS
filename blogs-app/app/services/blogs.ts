@@ -1,4 +1,4 @@
-import { eq, like } from "drizzle-orm"
+import { eq, like, sql } from "drizzle-orm"
 import { db } from "@/db"
 import { blogs } from "@/db/schema"
 
@@ -16,7 +16,13 @@ export const getBlogs = async (filter?: string) => {
 }
 
 export const addBlog = async (title: string, author: string, url: string) => {
-  await db.insert(blogs).values({ title, author, url })
+  const user = await db.query.users.findFirst({
+    orderBy: sql`RANDOM()`,
+  })
+
+  if (user) {
+    await db.insert(blogs).values({ title, author, url, userId: user.id })
+  }
 }
 
 export const getBlogById = async (id: number) => {
