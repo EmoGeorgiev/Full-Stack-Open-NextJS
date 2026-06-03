@@ -4,9 +4,13 @@ import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
 import { addBlog, addLike } from "../services/blogs"
 import { auth } from "@/auth"
+import { error } from "console"
 
 export const createBlog = async (
-  prevState: { error: string },
+  prevState: {
+    errors?: { title?: string, author?: string, url?: string };
+    values?: { title?: string, author?: string, url?: string };
+  },
   formData: FormData
 ) => {
   const session = await auth()
@@ -16,18 +20,25 @@ export const createBlog = async (
   }
 
   const title = formData.get("title") as string
-  if (!title || title.length < 5) {
-    return { error: "Blog title must be at least 5 characters long" }
-  }
-
   const author = formData.get("author") as string
-  if (!author || author.length < 5) {
-    return { error: "Blog author must be at least 5 characters long" }
+  const url = formData.get("url") as string
+
+  const errors: { title?: string, author?: string, url?: string } = {}
+
+  if (!title || title.length < 5) {
+    errors.title = "Blog title must be at least 5 characters long"
   }
 
-  const url = formData.get("url") as string
+  if (!author || author.length < 5) {
+    errors.author = "Blog author must be at least 5 characters long"
+  }
+
   if (!url || url.length < 5) {
-    return { error: "Blog url must be at least 5 characters long" }
+    errors.url = "Blog url must be at least 5 characters long"
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { errors, values: { title, author, url } }
   }
 
   await addBlog(title, author, url)
