@@ -13,3 +13,10 @@ export const addToReadingList = async (userId: number, blogId: number) => {
 
   await db.insert(readingLists).values({ userId, blogId })
 }
+
+export const markAsRead = async (userId: number, blogId: number) => {
+  await db
+    .update(readingLists)
+    .set({ read: true })
+    .where(eq(readingLists.userId, userId) && eq(readingLists.blogId, blogId))
+}

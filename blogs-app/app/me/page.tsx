@@ -2,6 +2,7 @@ import { auth } from "@/auth"
 import { redirect } from "next/navigation"
 import { getCurrentUser } from "../services/session"
 import { generateToken } from "../actions/users"
+import { markBlogAsRead } from "../actions/readingList"
 
 const PersonalPage = async () => {
   const session = await auth()
@@ -13,7 +14,7 @@ const PersonalPage = async () => {
   const user = await getCurrentUser()
 
   return (
-    <div className="mt-16 flex justify-center">
+    <div className="mt-16 h-2/3 flex justify-center">
       <div>
         <div className="flex flex-col space-y-3.5">
           <h1 className="text-3xl font-bold">
@@ -31,13 +32,38 @@ const PersonalPage = async () => {
           <h2 className="mt-4 text-xl font-bold">
             Reading List
           </h2>
-          <ul>
-            {user?.readingList.map(list => (
-              <li key={list.id}>
-                {list.blog.title}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-4">
+            <h3 className="text-lg font-bold">
+              Unread ({user?.readingList.filter(list => !list.read).length})
+            </h3>
+            <ul className="mt-4 flex flex-col space-y-2">
+              {user?.readingList.filter(list => !list.read)
+                .map(list => (
+                  <li key={list.id} className="bg-amber-100">
+                    <form action={markBlogAsRead} className="flex justify-between">
+                      <input type="hidden" name="id" value={list.blogId} />
+                      {list.blog.title}
+                      <button
+                        className="ml-3 bg-green-600 text-white hover:bg-green-800 px-3 py-1 rounded text-sm"
+                      >
+                        Mark as read
+                      </button>
+                    </form>
+                  </li>
+                ))}
+            </ul>
+            <h3 className="mt-4 text-lg font-bold">
+              Read ({user?.readingList.filter(list => list.read).length})
+            </h3>
+            <ul className="mt-4 flex flex-col space-y-2">
+              {user?.readingList.filter(list => list.read)
+                .map(list => (
+                  <li key={list.id} className="bg-green-100">
+                    {list.blog.title}
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
         <div className="mt-8 border-t-2 flex flex-col space-y-3.5">
           <h2 className="mt-4 text-xl font-bold">
