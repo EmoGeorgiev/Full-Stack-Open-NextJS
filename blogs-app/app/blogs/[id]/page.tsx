@@ -1,10 +1,15 @@
 import { addBlogLike } from "@/app/actions/blogs"
+import { addBlogToReadingList } from "@/app/actions/readingList"
 import { getBlogById } from "@/app/services/blogs"
+import { getCurrentUser } from "@/app/services/session"
 import { notFound } from "next/navigation"
 
 const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   const blog = await getBlogById(Number(id))
+  const user = await getCurrentUser()
+
+  console.log(user)
 
   if (!blog) {
     notFound()
@@ -33,12 +38,22 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
               type="submit"
               className="ml-2 bg-gray-600 text-white hover:bg-gray-500 px-3 py-1 rounded text-sm"
             >
-              Add like
+              Like
             </button>
           </form>
         </div>
+        {!user?.readingList.map(x => x.blogId).includes(blog.id) &&
+          <form className="mt-4 mx-auto" action={addBlogToReadingList}>
+            <input type="hidden" name="id" value={blog.id} />
+            <button
+              type="submit"
+              className="ml-2 bg-blue-600 text-white hover:bg-blue-800 px-3 py-1 rounded text-sm"
+            >
+              Add to reading list
+            </button>
+          </form>}
       </div>
-    </div>
+    </div >
   )
 }
 

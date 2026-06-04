@@ -27,6 +27,18 @@ const PersonalPage = async () => {
             <span className="font-bold">Username:</span> {session?.user?.email}
           </p>
         </div>
+        <div className="mt-8 border-t-2 flex flex-col space-x-3.5">
+          <h2 className="mt-4 text-xl font-bold">
+            Reading List
+          </h2>
+          <ul>
+            {user?.readingList.map(list => (
+              <li key={list.id}>
+                {list.blog.title}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="mt-8 border-t-2 flex flex-col space-y-3.5">
           <h2 className="mt-4 text-xl font-bold">
             API Token

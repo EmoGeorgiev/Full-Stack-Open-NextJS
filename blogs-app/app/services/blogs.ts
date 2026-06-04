@@ -2,6 +2,7 @@ import { eq, like } from "drizzle-orm"
 import { db } from "@/db"
 import { blogs } from "@/db/schema"
 import { getCurrentUser } from "./session"
+import { addToReadingList } from "./readingList"
 
 export const getBlogs = async (filter?: string) => {
   if (filter) {
@@ -23,7 +24,9 @@ export const addBlog = async (title: string, author: string, url: string) => {
     throw new Error("Not logged in")
   }
 
-  await db.insert(blogs).values({ title, author, url, userId: user.id })
+  const [blog] = await db.insert(blogs).values({ title, author, url, userId: user.id }).returning()
+
+  await addToReadingList(user.id, blog.id)
 }
 
 export const getBlogById = async (id: number) => {
