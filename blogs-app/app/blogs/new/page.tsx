@@ -26,7 +26,7 @@ const NewBlog = () => {
         <form action={formAction} className="w-full flex flex-col items-center space-y-4">
           <div>
             <label>
-              Title:
+              Title
               <input
                 type="text"
                 name="title"
@@ -39,7 +39,7 @@ const NewBlog = () => {
           </div>
           <div>
             <label>
-              Author:
+              Author
               <input
                 type="text"
                 name="author"
@@ -52,7 +52,7 @@ const NewBlog = () => {
           </div>
           <div>
             <label>
-              Url:
+              URL
               <input
                 type="text"
                 name="url"
@@ -66,6 +66,7 @@ const NewBlog = () => {
           <button
             type="submit"
             className="ml-2 flex justify-center bg-gray-600 text-white hover:bg-gray-500 px-3 py-1 rounded text-sm"
+            data-testid="create-blog-button"
           >
             Create
           </button>

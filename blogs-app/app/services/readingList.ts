@@ -1,10 +1,10 @@
 import { db } from "@/db"
 import { readingLists } from "@/db/schema"
-import { eq } from "drizzle-orm"
+import { and, eq } from "drizzle-orm"
 
 export const addToReadingList = async (userId: number, blogId: number) => {
   const readingList = await db.query.readingLists.findFirst({
-    where: eq(readingLists.userId, userId) && eq(readingLists.blogId, blogId)
+    where: and(eq(readingLists.userId, userId), eq(readingLists.blogId, blogId))
   })
 
   if (readingList) {

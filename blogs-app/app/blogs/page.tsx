@@ -19,16 +19,18 @@ const Blogs = async ({
             name="filter"
             placeholder="Search blogs"
             className="border rounded-lg"
+            data-testid="filter-input"
           />
           <button
             type="submit"
             className="ml-2 bg-gray-600 text-white hover:bg-gray-500 px-3 py-1 rounded text-sm"
+            data-testid="search-button"
           >
             Search
           </button>
         </form>
       </div>
-      <ul className="space-y-2">
+      <ul className="space-y-2" data-testid="blogs-list">
         {blogs.map(blog => (
           <li key={blog.id} className="border rounded p-3 hover:bg-gray-50">
             <Link

@@ -4,7 +4,7 @@ import { useActionState } from "react"
 import { registerUser } from "../actions/users"
 
 export default function RegisterPage() {
-  const [state, formAction] = useActionState(registerUser, { error: "" })
+  const [state, formAction] = useActionState(registerUser, { errors: {}, values: { username: "", name: "", password: "", confirmPassword: "" }, success: false })
 
   return (
     <div>
@@ -30,12 +30,14 @@ export default function RegisterPage() {
         </div>
         <div>
           <label>
-            Confirm password
+            Confirm Password
             <input type="password" name="confirmPassword" required minLength={4} />
           </label>
         </div>
-        <button type="submit">Register</button>
-        {state.error && <p style={{ color: "red" }}>{state.error}</p>}
+        <button type="submit" data-testid="register-button">Register</button>
+        {state.errors?.username && <p style={{ color: "red" }} data-testid="username-error">{state.errors.username}</p>}
+        {state.errors?.password && <p style={{ color: "red" }} data-testid="password-error">{state.errors.password}</p>}
+        {state.errors?.passwordConfirm && <p style={{ color: "red" }} data-testid="passwordConfirm-error">{state.errors.passwordConfirm}</p>}
       </form>
     </div>
   )

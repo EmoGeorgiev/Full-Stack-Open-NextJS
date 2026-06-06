@@ -9,7 +9,11 @@ import { revalidatePath } from "next/cache"
 import { getCurrentUser } from "../services/session"
 
 export const registerUser = async (
-  prevState: { error: string },
+  prevState: {
+    errors?: { username?: string, password?: string, passwordConfirm?: string };
+    values?: { username?: string, name?: string, password?: string, confirmPassword?: string };
+    success?: boolean
+  },
   formData: FormData
 ) => {
   const username = (formData.get("username") as string)?.trim()
@@ -17,20 +21,18 @@ export const registerUser = async (
   const password = formData.get("password") as string
   const confirmPassword = formData.get("confirmPassword") as string
 
+  const errors: { username?: string, password?: string, passwordConfirm?: string } = {}
+
   if (!username || username.length < 4) {
-    return { error: "Username must be at least 4 characters long" }
+    errors.username = "Username must be at least 4 characters long"
   }
 
   if (!password || password.length < 4) {
-    return { error: "Password must be at least 4 characters long" }
-  }
-
-  if (!confirmPassword || confirmPassword.length < 4) {
-    return { error: "Confirm password must be at least 4 characters long" }
+    errors.password = "Password must be at least 4 characters long"
   }
 
   if (password !== confirmPassword) {
-    return { error: "Password and Confirm password must match" }
+    errors.passwordConfirm = "Password and Confirm password must match"
   }
 
   const user = await db.query.users.findFirst({
@@ -39,6 +41,10 @@ export const registerUser = async (
 
   if (user) {
     return { error: `The username - ${username} already exists` }
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return { errors, values: { username, name, password, confirmPassword }, success: false }
   }
 
   const passwordHash = await bcrypt.hash(password, 10)
