@@ -1,3 +1,0 @@
-0:{"a":"$@1","f":"","q":"","i":true,"b":"development"}
-1:D"$2"
-1:{"errors":{"passwordConfirm":"Password and Confirm password must match"},"values":{"username":"testuser","name":"Test User","password":"testpass123","confirmPassword":"differentpass"},"success":false}
