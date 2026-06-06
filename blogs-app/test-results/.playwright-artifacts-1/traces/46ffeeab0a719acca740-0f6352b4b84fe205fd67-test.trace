@@ -1,0 +1,37 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","playwrightVersion":"1.60.0","options":{},"platform":"linux","wallTime":1780753196270,"monotonicTime":17794.394,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":17795.277,"class":"Test","method":"hook","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":17795.704,"class":"Test","method":"hook","title":"beforeEach hook","params":{},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":5,"column":8}]}
+{"type":"after","callId":"hook@2","endTime":17921.272,"annotations":[]}
+{"type":"before","callId":"fixture@28","stepId":"fixture@28","parentId":"hook@1","startTime":17922.48,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@29","stepId":"pw:api@29","parentId":"fixture@28","startTime":17923.541,"class":"Test","method":"pw:api","title":"Create context","params":{"selectorEngines":"[]","testIdAttributeName":"data-testid","acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@29","endTime":17926.787,"annotations":[]}
+{"type":"after","callId":"fixture@28","endTime":17928.473,"annotations":[]}
+{"type":"before","callId":"fixture@30","stepId":"fixture@30","parentId":"hook@1","startTime":17928.85,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@31","stepId":"pw:api@31","parentId":"fixture@30","startTime":17929.878,"class":"Test","method":"pw:api","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@31","endTime":17951.866,"annotations":[]}
+{"type":"after","callId":"fixture@30","endTime":17952.007,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":17952.05,"annotations":[]}
+{"type":"before","callId":"pw:api@32","stepId":"pw:api@32","startTime":18201.777,"class":"Test","method":"pw:api","title":"Navigate to \"/login\"","params":{"url":"/login","waitUntil":"load","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":61,"column":18}]}
+{"type":"after","callId":"pw:api@32","endTime":18550.341,"annotations":[]}
+{"type":"before","callId":"pw:api@33","stepId":"pw:api@33","startTime":18551.358,"class":"Test","method":"pw:api","title":"Fill \"testuser\" getByLabel('Username', { exact: true })","params":{"selector":"internal:label=\"Username\"s","value":"testuser","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":62,"column":58}]}
+{"type":"after","callId":"pw:api@33","endTime":18605.334,"annotations":[]}
+{"type":"before","callId":"pw:api@34","stepId":"pw:api@34","startTime":18606.253,"class":"Test","method":"pw:api","title":"Fill \"testpass123\" getByLabel('Password', { exact: true })","params":{"selector":"internal:label=\"Password\"s","value":"testpass123","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":63,"column":58}]}
+{"type":"after","callId":"pw:api@34","endTime":18615.018,"annotations":[]}
+{"type":"before","callId":"pw:api@35","stepId":"pw:api@35","startTime":18616.064,"class":"Test","method":"pw:api","title":"Click getByTestId('login-button')","params":{"selector":"internal:testid=[data-testid=\"login-button\"s]","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":64,"column":46}]}
+{"type":"after","callId":"pw:api@35","endTime":18652.642,"annotations":[]}
+{"type":"before","callId":"expect@36","stepId":"expect@36","startTime":18653.398,"class":"Test","method":"expect","title":"Expect \"toHaveURL\"","params":{"expected":"/"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":67,"column":26}]}
+{"type":"after","callId":"expect@36","endTime":18962.667,"annotations":[]}
+{"type":"before","callId":"expect@37","stepId":"expect@37","startTime":18963.937,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","params":{},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":68,"column":54}]}
+{"type":"after","callId":"expect@37","endTime":18971.795,"annotations":[]}
+{"type":"before","callId":"hook@38","stepId":"hook@38","startTime":18972.134,"class":"Test","method":"hook","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@39","stepId":"fixture@39","parentId":"hook@38","startTime":18972.654,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@39","endTime":18972.783,"annotations":[]}
+{"type":"before","callId":"fixture@40","stepId":"fixture@40","parentId":"hook@38","startTime":18973.077,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@41","stepId":"pw:api@41","parentId":"fixture@40","startTime":19051.049,"class":"Test","method":"pw:api","title":"Close context","params":{"reason":"Test ended."},"stack":[]}
+{"type":"after","callId":"pw:api@41","endTime":19053.336,"annotations":[]}
+{"type":"after","callId":"fixture@40","endTime":19053.482,"annotations":[]}
+{"type":"before","callId":"fixture@50","stepId":"fixture@50","parentId":"hook@38","startTime":19055.102,"class":"Test","method":"fixture","title":"Fixture \"baseURL\"","params":{},"stack":[{"file":"project#","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@50","endTime":19055.139,"annotations":[]}
+{"type":"after","callId":"hook@38","endTime":19057.756,"annotations":[]}
+{"type":"before","callId":"attach@24e9d512529c39c9af196a2062385f40","stepId":"attach@24e9d512529c39c9af196a2062385f40","startTime":19135.111,"class":"Test","method":"test.attach","title":"Attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@24e9d512529c39c9af196a2062385f40","endTime":19135.184,"attachments":[]}

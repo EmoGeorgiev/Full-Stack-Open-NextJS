@@ -1,0 +1,31 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","playwrightVersion":"1.60.0","options":{},"platform":"linux","wallTime":1780753201846,"monotonicTime":23370.599,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":23371.098,"class":"Test","method":"hook","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":23371.272,"class":"Test","method":"hook","title":"beforeEach hook","params":{},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":5,"column":8}]}
+{"type":"after","callId":"hook@2","endTime":23492.227,"annotations":[]}
+{"type":"before","callId":"fixture@28","stepId":"fixture@28","parentId":"hook@1","startTime":23493.098,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@29","stepId":"pw:api@29","parentId":"fixture@28","startTime":23493.928,"class":"Test","method":"pw:api","title":"Create context","params":{"selectorEngines":"[]","testIdAttributeName":"data-testid","acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@29","endTime":23495.915,"annotations":[]}
+{"type":"after","callId":"fixture@28","endTime":23497.255,"annotations":[]}
+{"type":"before","callId":"fixture@30","stepId":"fixture@30","parentId":"hook@1","startTime":23497.596,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@31","stepId":"pw:api@31","parentId":"fixture@30","startTime":23498.348,"class":"Test","method":"pw:api","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@31","endTime":23520.27,"annotations":[]}
+{"type":"after","callId":"fixture@30","endTime":23520.417,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":23520.454,"annotations":[]}
+{"type":"before","callId":"pw:api@32","stepId":"pw:api@32","startTime":23521.651,"class":"Test","method":"pw:api","title":"Navigate to \"/\"","params":{"url":"/","waitUntil":"load","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":112,"column":18}]}
+{"type":"after","callId":"pw:api@32","endTime":23890.739,"annotations":[]}
+{"type":"before","callId":"expect@33","stepId":"expect@33","startTime":23891.624,"class":"Test","method":"expect","title":"Expect \"toHaveURL\"","params":{"expected":"/"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":115,"column":26}]}
+{"type":"after","callId":"expect@33","endTime":23945.797,"annotations":[]}
+{"type":"before","callId":"hook@34","stepId":"hook@34","startTime":23946.592,"class":"Test","method":"hook","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@35","stepId":"fixture@35","parentId":"hook@34","startTime":23947.206,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@35","endTime":23947.297,"annotations":[]}
+{"type":"before","callId":"fixture@36","stepId":"fixture@36","parentId":"hook@34","startTime":23947.475,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@36","endTime":24008.077,"annotations":[],"error":{"name":"","message":"\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m","stack":"\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"}}
+{"type":"before","callId":"fixture@45","stepId":"fixture@45","parentId":"hook@34","startTime":24010.3,"class":"Test","method":"fixture","title":"Fixture \"baseURL\"","params":{},"stack":[{"file":"project#","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@45","endTime":24010.35,"annotations":[]}
+{"type":"after","callId":"hook@34","endTime":24014.005,"annotations":[],"error":{"name":"","message":"\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m","stack":"\u001b[31mTearing down \"context\" exceeded the test timeout of 30000ms.\u001b[39m"}}
+{"type":"before","callId":"hook@67","stepId":"hook@67","startTime":24014.224,"class":"Test","method":"hook","title":"Worker Cleanup","params":{},"stack":[]}
+{"type":"before","callId":"fixture@71","stepId":"fixture@71","parentId":"hook@67","startTime":24015.053,"class":"Test","method":"fixture","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"error","message":"Error: Channel closed","stack":[]}
+{"type":"after","callId":"fixture@71","endTime":24045.214,"annotations":[]}
+{"type":"after","callId":"hook@67","endTime":24047.192,"annotations":[]}
+{"type":"error","message":"Error: browserContext.close: Target page, context or browser has been closed","stack":[]}

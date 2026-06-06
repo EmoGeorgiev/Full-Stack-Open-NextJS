@@ -1,0 +1,43 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","playwrightVersion":"1.60.0","options":{},"platform":"linux","wallTime":1780753194795,"monotonicTime":16320.057,"sdkLanguage":"javascript"}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":16338.65,"class":"Test","method":"hook","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":16339.591,"class":"Test","method":"hook","title":"beforeEach hook","params":{},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":5,"column":8}]}
+{"type":"after","callId":"hook@2","endTime":16887.294,"annotations":[]}
+{"type":"before","callId":"fixture@33","stepId":"fixture@33","parentId":"hook@1","startTime":16889.458,"class":"Test","method":"fixture","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@34","stepId":"pw:api@34","parentId":"fixture@33","startTime":16893.217,"class":"Test","method":"pw:api","title":"Launch browser","params":{"handleSIGINT":"false","tracesDir":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/test-results/.playwright-artifacts-1/traces","artifactsDir":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/test-results/.playwright-artifacts-1","headless":"true","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined","timeout":"180000"},"stack":[]}
+{"type":"after","callId":"pw:api@34","endTime":16947.788,"annotations":[]}
+{"type":"after","callId":"fixture@33","endTime":16948.125,"annotations":[]}
+{"type":"before","callId":"fixture@37","stepId":"fixture@37","parentId":"hook@1","startTime":16949.731,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@38","stepId":"pw:api@38","parentId":"fixture@37","startTime":16951.664,"class":"Test","method":"pw:api","title":"Create context","params":{"selectorEngines":"[]","testIdAttributeName":"data-testid","acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","viewport":"Object","baseURL":"http://localhost:3000","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@38","endTime":16961.504,"annotations":[]}
+{"type":"after","callId":"fixture@37","endTime":16965.875,"annotations":[]}
+{"type":"before","callId":"fixture@39","stepId":"fixture@39","parentId":"hook@1","startTime":16966.183,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@40","stepId":"pw:api@40","parentId":"fixture@39","startTime":16966.966,"class":"Test","method":"pw:api","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@40","endTime":16992.831,"annotations":[]}
+{"type":"after","callId":"fixture@39","endTime":16992.943,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":16993.002,"annotations":[]}
+{"type":"before","callId":"pw:api@41","stepId":"pw:api@41","startTime":16994.419,"class":"Test","method":"pw:api","title":"Navigate to \"/register\"","params":{"url":"/register","waitUntil":"load","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":43,"column":18}]}
+{"type":"after","callId":"pw:api@41","endTime":17350.807,"annotations":[]}
+{"type":"before","callId":"pw:api@42","stepId":"pw:api@42","startTime":17353.341,"class":"Test","method":"pw:api","title":"Fill \"testuser\" getByLabel('Username', { exact: true })","params":{"selector":"internal:label=\"Username\"s","value":"testuser","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":45,"column":58}]}
+{"type":"after","callId":"pw:api@42","endTime":17407.057,"annotations":[]}
+{"type":"before","callId":"pw:api@43","stepId":"pw:api@43","startTime":17408.306,"class":"Test","method":"pw:api","title":"Fill \"Test User\" getByLabel('Name', { exact: true })","params":{"selector":"internal:label=\"Name\"s","value":"Test User","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":46,"column":54}]}
+{"type":"after","callId":"pw:api@43","endTime":17417.124,"annotations":[]}
+{"type":"before","callId":"pw:api@44","stepId":"pw:api@44","startTime":17418.359,"class":"Test","method":"pw:api","title":"Fill \"testpass123\" getByLabel('Password', { exact: true })","params":{"selector":"internal:label=\"Password\"s","value":"testpass123","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":47,"column":58}]}
+{"type":"after","callId":"pw:api@44","endTime":17428.571,"annotations":[]}
+{"type":"before","callId":"pw:api@45","stepId":"pw:api@45","startTime":17429.616,"class":"Test","method":"pw:api","title":"Fill \"differentpass\" getByLabel('Confirm Password', { exact: true })","params":{"selector":"internal:label=\"Confirm Password\"s","value":"differentpass","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":50,"column":10}]}
+{"type":"after","callId":"pw:api@45","endTime":17437.594,"annotations":[]}
+{"type":"before","callId":"pw:api@46","stepId":"pw:api@46","startTime":17440.263,"class":"Test","method":"pw:api","title":"Click getByTestId('register-button')","params":{"selector":"internal:testid=[data-testid=\"register-button\"s]","strict":"true","timeout":"0"},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":52,"column":49}]}
+{"type":"after","callId":"pw:api@46","endTime":17491.888,"annotations":[]}
+{"type":"before","callId":"expect@47","stepId":"expect@47","startTime":17495.202,"class":"Test","method":"expect","title":"Expect \"toBeVisible\"","params":{},"stack":[{"file":"/home/unstabl3/Programming/Full-Stack-Open-NextJS/blogs-app/tests/blog-app.spec.ts","line":55,"column":63}]}
+{"type":"after","callId":"expect@47","endTime":17587.222,"annotations":[]}
+{"type":"before","callId":"hook@48","stepId":"hook@48","startTime":17587.551,"class":"Test","method":"hook","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@49","stepId":"fixture@49","parentId":"hook@48","startTime":17588.765,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@49","endTime":17588.938,"annotations":[]}
+{"type":"before","callId":"fixture@50","stepId":"fixture@50","parentId":"hook@48","startTime":17589.131,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@51","stepId":"pw:api@51","parentId":"fixture@50","startTime":17684.878,"class":"Test","method":"pw:api","title":"Close context","params":{"reason":"Test ended."},"stack":[]}
+{"type":"after","callId":"pw:api@51","endTime":17688.959,"annotations":[]}
+{"type":"after","callId":"fixture@50","endTime":17689.168,"annotations":[]}
+{"type":"before","callId":"fixture@60","stepId":"fixture@60","parentId":"hook@48","startTime":17691.798,"class":"Test","method":"fixture","title":"Fixture \"baseURL\"","params":{},"stack":[{"file":"project#","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@60","endTime":17691.843,"annotations":[]}
+{"type":"after","callId":"hook@48","endTime":17695.568,"annotations":[]}
+{"type":"before","callId":"attach@247875ea4d2a48d667f9fb6c7e93ee09","stepId":"attach@247875ea4d2a48d667f9fb6c7e93ee09","startTime":17793.563,"class":"Test","method":"test.attach","title":"Attach \"trace\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@247875ea4d2a48d667f9fb6c7e93ee09","endTime":17793.684,"attachments":[]}
