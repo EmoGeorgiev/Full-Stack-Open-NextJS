@@ -7,7 +7,6 @@ import { redirect } from "next/navigation"
 
 export const addBlogToReadingList = async (formData: FormData) => {
   const user = await getCurrentUser()
-  console.log("Kakvo stava")
 
   if (!user) {
     redirect("/login")

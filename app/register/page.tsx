@@ -13,7 +13,7 @@ export default function RegisterPage() {
         <div>
           <label>
             Username
-            <input type="text" name="username" required minLength={4} />
+            <input type="text" name="username" required />
           </label>
         </div>
         <div>
